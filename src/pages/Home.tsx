@@ -83,7 +83,7 @@ export const Home = () => {
 				<MenuItem
 					title='Mini Donas'
 					price='25'
-					description='6 mini donas con arabe y fruta de tu preferencia'
+					description='6 mini donas con jarabe y fruta de tu preferencia'
 					images={['./img/mini-donas-1.jpeg']}
 				/>
 			</Paper>
