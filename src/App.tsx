@@ -12,7 +12,13 @@ const theme = createTheme({
 		}
 	},
 	typography: {
-		fontFamily: ['Protest Riot', 'sans-serif'].join(',')
+		fontFamily: ['Caveat', 'sans-serif'].join(','),
+		body1: {
+			fontWeight: 500
+		},
+		subtitle1: {
+			fontWeight: 700
+		}
 	}
 });
 
