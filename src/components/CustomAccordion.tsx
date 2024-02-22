@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-// import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
+import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
 import MuiAccordionSummary, {
 	AccordionSummaryProps
@@ -19,18 +19,7 @@ const Accordion = styled((props: AccordionProps) => (
 
 export const AccordionSummary = styled((props: AccordionSummaryProps) => (
 	<MuiAccordionSummary
-		expandIcon={
-			<div
-				style={{
-					fontSize: '1em',
-					width: '0.4em',
-					height: '0.4em',
-					backgroundColor: 'black',
-					borderRadius: '50%',
-					marginRight: '4px'
-				}}
-			/>
-		}
+		expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.8em' }} />}
 		{...props}
 	/>
 ))(({ theme }) => ({
@@ -59,7 +48,7 @@ interface CustomAccordionProps {
 }
 
 export const CustomAccordion = ({ children }: CustomAccordionProps) => {
-	const [expanded, setExpanded] = React.useState<boolean>(false);
+	const [expanded, setExpanded] = React.useState<boolean>(true);
 
 	return (
 		<Accordion expanded={expanded} onChange={() => setExpanded(!expanded)}>
