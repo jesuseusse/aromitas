@@ -5,6 +5,7 @@ import {
 	AccordionSummary
 } from '../components/CustomAccordion';
 import Carousel from 'react-material-ui-carousel';
+import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';
 
 interface MenuItemProps {
 	title: string;
@@ -30,21 +31,35 @@ const MenuItem = ({ title, price, description, images }: MenuItemProps) => {
 				<Typography sx={{ marginLeft: 2, fontSize: 16 }}>
 					{description}
 				</Typography>
-				<Carousel animation='slide' interval={6000}>
-					{images?.map((img, i) => (
-						<img
-							width='100%'
-							height='100%'
-							src={img}
-							style={{
-								objectFit: 'cover',
-								aspectRatio: '1/1',
-								borderRadius: '8px'
-							}}
-							key={i}
-						/>
-					))}
-				</Carousel>
+				{images && (
+					<Carousel
+						autoPlay={false}
+						indicators={images.length > 1}
+						NextIcon={<ArrowForwardIos />}
+						PrevIcon={<ArrowBackIosNew />}
+						indicatorContainerProps={{
+							style: {
+								position: 'absolute', // 1
+								zIndex: '1000', // 3
+								bottom: '16px'
+							}
+						}}
+					>
+						{images.map((img, i) => (
+							<img
+								width='100%'
+								height='100%'
+								src={img}
+								style={{
+									objectFit: 'cover',
+									aspectRatio: '1/1',
+									borderRadius: '8px'
+								}}
+								key={i}
+							/>
+						))}
+					</Carousel>
+				)}
 			</AccordionDetails>
 		</CustomAccordion>
 	);
