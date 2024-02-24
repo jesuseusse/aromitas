@@ -20,15 +20,19 @@ const MenuItem = ({ title, price, description, images }: MenuItemProps) => {
 			<AccordionSummary>
 				<Grid container sx={{ justifyContent: 'space-between' }}>
 					<Grid item>
-						<Typography sx={{ fontSize: 18 }}>{title}</Typography>
+						<Typography sx={{ fontSize: { xs: 18, md: 24 } }}>
+							{title}
+						</Typography>
 					</Grid>
 					<Grid item>
-						<Typography sx={{ fontSize: 18 }}>${price}</Typography>
+						<Typography sx={{ fontSize: { xs: 18, md: 24 } }}>
+							${price}
+						</Typography>
 					</Grid>
 				</Grid>
 			</AccordionSummary>
 			<AccordionDetails>
-				<Typography sx={{ marginLeft: 2, fontSize: 16 }}>
+				<Typography sx={{ marginLeft: 2, fontSize: { xs: 16, md: 20 } }}>
 					{description}
 				</Typography>
 				{images && (
@@ -97,7 +101,7 @@ export const Home = () => {
 				</Typography>
 				<MenuItem
 					title='Mini hotcakes'
-					price='30'
+					price='35'
 					description='15 mini hotcakes con 1 jarabe y 1 fruta de tu preferencia'
 					images={['./img/mini-hotcake-1.jpeg', './img/mini-hotcake-2.jpeg']}
 				/>
