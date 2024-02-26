@@ -54,6 +54,7 @@ const MenuItem = ({ title, price, description, images }: MenuItemProps) => {
 								width='100%'
 								height='100%'
 								src={img}
+								loading='lazy'
 								style={{
 									objectFit: 'cover',
 									aspectRatio: '1/1',
@@ -74,14 +75,27 @@ export const Home = () => {
 		<Container>
 			<Paper
 				elevation={0}
-				sx={{ border: 'none', overflow: 'auto', borderRadius: '16px' }}
+				sx={{
+					border: 'none',
+					overflow: 'hidden',
+					borderRadius: '16px',
+					display: 'flex',
+					justifyContent: 'center',
+					width: { xs: 'auto', sm: '500px' },
+					height: { xs: 'auto', sm: '500px' },
+					margin: 'auto'
+				}}
 			>
 				<img
 					src='./img/Aromitas.jpeg'
-					alt=''
+					alt='AROMITAS'
 					width='100%'
 					height='100%'
-					style={{ objectFit: 'fill', filter: 'brightness(1.09)' }}
+					style={{
+						objectFit: 'fill',
+						filter: 'brightness(1.09)',
+						margin: 'auto'
+					}}
 				/>
 			</Paper>
 			<Paper
@@ -116,6 +130,12 @@ export const Home = () => {
 					price='25'
 					description='6 mini donas con 1 jarabe y 1 fruta de tu preferencia'
 					images={['./img/mini-donas-1.jpeg']}
+				/>
+
+				<MenuItem
+					title='Ingrediente extra'
+					price='5'
+					description='jarabe y/o fruta'
 				/>
 			</Paper>
 		</Container>
