@@ -1,11 +1,11 @@
 import { ThemeProvider, createTheme } from '@mui/material';
-import { green, purple } from '@mui/material/colors';
+import { green } from '@mui/material/colors';
 import { Home } from './pages/Home';
 
 const theme = createTheme({
 	palette: {
 		primary: {
-			main: purple[500]
+			main: '#000000'
 		},
 		secondary: {
 			main: green[500]

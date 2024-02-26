@@ -1,4 +1,4 @@
-import { Container, Grid, Paper, Typography } from '@mui/material';
+import { Container, Grid, Link, Paper, Typography } from '@mui/material';
 import { AccordionDetails } from '../components/CustomAccordion';
 import {
 	CustomAccordion,
@@ -6,6 +6,7 @@ import {
 } from '../components/CustomAccordion';
 import Carousel from 'react-material-ui-carousel';
 import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';
+import { useState } from 'react';
 
 interface MenuItemProps {
 	title: string;
@@ -15,6 +16,7 @@ interface MenuItemProps {
 }
 
 const MenuItem = ({ title, price, description, images }: MenuItemProps) => {
+	const [show, setShow] = useState(false);
 	return (
 		<CustomAccordion>
 			<AccordionSummary>
@@ -33,9 +35,14 @@ const MenuItem = ({ title, price, description, images }: MenuItemProps) => {
 			</AccordionSummary>
 			<AccordionDetails>
 				<Typography sx={{ marginLeft: 2, fontSize: { xs: 16, md: 20 } }}>
-					{description}
+					{description}{' '}
+					{images && (
+						<Link onClick={() => setShow(!show)}>
+							{!show ? 'Ver fotos' : 'Ocultar'}
+						</Link>
+					)}
 				</Typography>
-				{images && (
+				{show && images && (
 					<Carousel
 						autoPlay={false}
 						indicators={images.length > 1}
@@ -52,7 +59,6 @@ const MenuItem = ({ title, price, description, images }: MenuItemProps) => {
 						{images.map((img, i) => (
 							<img
 								width='100%'
-								height='100%'
 								src={img}
 								loading='lazy'
 								style={{
