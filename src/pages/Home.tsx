@@ -120,21 +120,26 @@ export const Home = () => {
 					Menú
 				</Typography>
 				<MenuItem
-					title='Mini hotcakes'
-					price='35'
-					description='15 mini hotcakes con 1 jarabe y 1 fruta de tu preferencia'
+					title='15 Mini hotcakes'
+					price='40'
+					description='15 mini hotcakes con 1 jarabe, 1 fruta, 1 topping de tu preferencia'
 					images={['./img/mini-hotcake-1.jpeg', './img/mini-hotcake-2.jpeg']}
 				/>
 				<MenuItem
-					title='Mini crepas'
-					price='30'
-					description='Una mini crepa con 1 jarabe y 1 fruta de tu preferencia'
+					title='25 Mini hotcakes'
+					price='60'
+					description='60 mini hotcakes con 1 jarabe, 1 fruta, 1 topping de tu preferencia'
+				/>
+				<MenuItem
+					title='Crepa'
+					price='35'
+					description='Una crepa con 1 jarabe, 1 fruta, 1 topping de tu preferencia'
 					images={['./img/mini-crepa-1.jpeg', './img/mini-crepa-2.jpeg']}
 				/>
 				<MenuItem
 					title='Mini Donas'
 					price='25'
-					description='6 mini donas con 1 jarabe y 1 fruta de tu preferencia'
+					description='6 mini donas con 1 jarabe, 1 fruta, 1 topping de tu preferencia'
 					images={['./img/mini-donas-1.jpeg']}
 				/>
 
