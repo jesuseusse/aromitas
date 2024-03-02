@@ -7,6 +7,7 @@ import {
 import Carousel from 'react-material-ui-carousel';
 import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';
 import { useState } from 'react';
+import menu from '../data/menu.json';
 
 interface MenuItemProps {
 	title: string;
@@ -16,6 +17,8 @@ interface MenuItemProps {
 }
 
 const MenuItem = ({ title, price, description, images }: MenuItemProps) => {
+	console.log(menu);
+
 	const [show, setShow] = useState(false);
 	return (
 		<CustomAccordion>
@@ -119,35 +122,16 @@ export const Home = () => {
 				>
 					Menú
 				</Typography>
-				<MenuItem
-					title='15 Mini hotcakes'
-					price='40'
-					description='15 mini hotcakes con 1 jarabe, 1 fruta, 1 topping de tu preferencia'
-					images={['./img/mini-hotcake-1.jpeg', './img/mini-hotcake-2.jpeg']}
-				/>
-				<MenuItem
-					title='25 Mini hotcakes'
-					price='60'
-					description='60 mini hotcakes con 1 jarabe, 1 fruta, 1 topping de tu preferencia'
-				/>
-				<MenuItem
-					title='Crepa'
-					price='35'
-					description='Una crepa con 1 jarabe, 1 fruta, 1 topping de tu preferencia'
-					images={['./img/mini-crepa-1.jpeg', './img/mini-crepa-2.jpeg']}
-				/>
-				<MenuItem
-					title='Mini Donas'
-					price='25'
-					description='6 mini donas con 1 jarabe, 1 fruta, 1 topping de tu preferencia'
-					images={['./img/mini-donas-1.jpeg']}
-				/>
-
-				<MenuItem
-					title='Ingrediente extra'
-					price='5'
-					description='jarabe y/o fruta'
-				/>
+				{menu.map(({ name, description, images, price }) => {
+					return (
+						<MenuItem
+							title={name}
+							price={price}
+							description={description}
+							images={images}
+						/>
+					);
+				})}
 			</Paper>
 		</Container>
 	);

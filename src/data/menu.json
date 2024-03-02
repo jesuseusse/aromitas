@@ -1,0 +1,30 @@
+[
+	{
+		"name": "15 Mini hotcakes",
+		"price": "40",
+		"description": "Con 1 jarabe, 1 fruta y 1 topping de tu preferencia",
+		"images": ["./img/mini-hotcake-1.jpeg", "./img/mini-hotcake-2.jpeg"]
+	},
+	{
+		"name": "25 Mini hotcakes",
+		"price": "60",
+		"description": "Con 1 jarabe, 1 fruta y 1 topping de tu preferencia"
+	},
+	{
+		"name": "Crepa",
+		"price": "35",
+		"description": "Con 1 jarabe, 1 fruta y 1 topping de tu preferencia",
+		"images": ["./img/mini-crepa-1.jpeg", "./img/mini-crepa-2.jpeg"]
+	},
+	{
+		"name": "Mini Donas",
+		"price": "25",
+		"description": "Con 1 jarabe, 1 fruta y 1 topping de tu preferencia",
+		"images": ["./img/mini-donas-1.jpeg"]
+	},
+	{
+		"name": "Ingredientes extra",
+		"price": "5",
+		"description": "1 jarabe, 1 fruta y 1 topping de tu preferencia"
+	}
+]
