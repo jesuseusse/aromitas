@@ -1,0 +1,13 @@
+{
+	"jarabes": [
+		"cajeta",
+		"lechera",
+		"mermelada de fresa",
+		"hersheys",
+		"maple",
+		"nutella",
+		"philadelphia"
+	],
+	"toppings": ["colores", "chocolate", "nuez", "lunetas"],
+	"frutas": ["fresas", "plátano", "kiwi", "duraznos"]
+}

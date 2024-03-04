@@ -8,6 +8,7 @@ import Carousel from 'react-material-ui-carousel';
 import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';
 import { useState } from 'react';
 import menu from '../data/menu.json';
+import ingredients from '../data/ingredients.json';
 
 interface MenuItemProps {
 	title: string;
@@ -133,6 +134,89 @@ export const Home = () => {
 					);
 				})}
 			</Paper>
+			<Ingredientes />
 		</Container>
 	);
 };
+
+export function Ingredientes() {
+	return (
+		<Grid container>
+			<Grid item xs={4}>
+				<Paper
+					elevation={1}
+					sx={{
+						padding: 2,
+						margin: 1,
+						overflow: 'auto',
+						borderRadius: '16px'
+					}}
+				>
+					<Typography
+						variant='subtitle1'
+						sx={{ textAlign: 'center', fontWeight: 'bold', fontSize: 24 }}
+					>
+						Jarabes
+					</Typography>
+					{ingredients.jarabes.map(ing => (
+						<Typography
+							sx={{ textAlign: 'center', fontWeight: 'bold', fontSize: 18 }}
+						>
+							{ing}
+						</Typography>
+					))}
+				</Paper>
+			</Grid>
+			<Grid item xs={4}>
+				<Paper
+					elevation={1}
+					sx={{
+						padding: 2,
+						margin: 1,
+						overflow: 'auto',
+						borderRadius: '16px'
+					}}
+				>
+					<Typography
+						variant='subtitle1'
+						sx={{ textAlign: 'center', fontWeight: 'bold', fontSize: 24 }}
+					>
+						Frutas
+					</Typography>
+					{ingredients.frutas.map(ing => (
+						<Typography
+							sx={{ textAlign: 'center', fontWeight: 'bold', fontSize: 18 }}
+						>
+							{ing}
+						</Typography>
+					))}
+				</Paper>
+			</Grid>
+			<Grid item xs={4}>
+				<Paper
+					elevation={1}
+					sx={{
+						padding: 2,
+						margin: 1,
+						overflow: 'auto',
+						borderRadius: '16px'
+					}}
+				>
+					<Typography
+						variant='subtitle1'
+						sx={{ textAlign: 'center', fontWeight: 'bold', fontSize: 24 }}
+					>
+						Toppings
+					</Typography>
+					{ingredients.toppings.map(ing => (
+						<Typography
+							sx={{ textAlign: 'center', fontWeight: 'bold', fontSize: 18 }}
+						>
+							{ing}
+						</Typography>
+					))}
+				</Paper>
+			</Grid>
+		</Grid>
+	);
+}
