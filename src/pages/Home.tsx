@@ -1,7 +1,7 @@
 import { Button, Container, Grid, Paper, Typography } from '@mui/material';
 import menu from '../data/menu.json';
 import ingredients from '../data/ingredients.json';
-import { Link, redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { MenuItem } from '../components/MenuItem';
 
 export const Home = () => {
