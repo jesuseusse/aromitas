@@ -1,6 +1,9 @@
 import { ThemeProvider, createTheme } from '@mui/material';
 import { green } from '@mui/material/colors';
-import { Home } from './pages/Home';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './router';
+import { Provider } from 'react-redux';
+import { store } from './store';
 
 const theme = createTheme({
 	palette: {
@@ -19,6 +22,10 @@ const theme = createTheme({
 		subtitle1: {
 			fontWeight: 700,
 			fontSize: 20
+		},
+		subtitle2: {
+			fontWeight: 500,
+			fontSize: 18
 		}
 	}
 });
@@ -26,7 +33,9 @@ const theme = createTheme({
 function App() {
 	return (
 		<ThemeProvider theme={theme}>
-			<Home />
+			<Provider store={store}>
+				<RouterProvider router={router} />
+			</Provider>
 		</ThemeProvider>
 	);
 }

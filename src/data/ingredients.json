@@ -9,5 +9,12 @@
 		"philadelphia"
 	],
 	"toppings": ["colores", "chocolate", "nuez", "lunetas"],
-	"frutas": ["fresas", "plátano", "kiwi", "duraznos"]
+	"frutas": ["fresas", "plátano", "kiwi", "duraznos"],
+	"frappe": [
+		"chocolate italiano",
+		"mocka",
+		"fresas con crema",
+		"taro",
+		"cajeta"
+	]
 }

@@ -23,6 +23,11 @@
 		"images": ["./img/mini-donas-1.jpeg"]
 	},
 	{
+		"name": "Frappé",
+		"price": "60",
+		"description": "frappé frio en un vaso de 16oz"
+	},
+	{
 		"name": "Ingredientes extra",
 		"price": "5",
 		"description": "1 jarabe, 1 fruta y 1 topping de tu preferencia"

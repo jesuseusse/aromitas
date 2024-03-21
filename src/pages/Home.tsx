@@ -1,84 +1,8 @@
-import { Container, Grid, Link, Paper, Typography } from '@mui/material';
-import { AccordionDetails } from '../components/CustomAccordion';
-import {
-	CustomAccordion,
-	AccordionSummary
-} from '../components/CustomAccordion';
-import Carousel from 'react-material-ui-carousel';
-import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';
-import { useState } from 'react';
+import { Button, Container, Grid, Paper, Typography } from '@mui/material';
 import menu from '../data/menu.json';
 import ingredients from '../data/ingredients.json';
-
-interface MenuItemProps {
-	title: string;
-	price: string;
-	description?: string;
-	images?: string[];
-}
-
-const MenuItem = ({ title, price, description, images }: MenuItemProps) => {
-	console.log(menu);
-
-	const [show, setShow] = useState(false);
-	return (
-		<CustomAccordion>
-			<AccordionSummary>
-				<Grid container sx={{ justifyContent: 'space-between' }}>
-					<Grid item>
-						<Typography sx={{ fontSize: { xs: 18, md: 24 } }}>
-							{title}
-						</Typography>
-					</Grid>
-					<Grid item>
-						<Typography sx={{ fontSize: { xs: 18, md: 24 } }}>
-							${price}
-						</Typography>
-					</Grid>
-				</Grid>
-			</AccordionSummary>
-			<AccordionDetails>
-				<Typography sx={{ marginLeft: 2, fontSize: { xs: 16, md: 20 } }}>
-					{description}{' '}
-					{images && (
-						<Link onClick={() => setShow(!show)}>
-							{!show ? 'Ver fotos' : 'Ocultar'}
-						</Link>
-					)}
-				</Typography>
-				{show && images && (
-					<Carousel
-						autoPlay={false}
-						indicators={images.length > 1}
-						NextIcon={<ArrowForwardIos />}
-						PrevIcon={<ArrowBackIosNew />}
-						indicatorContainerProps={{
-							style: {
-								position: 'absolute', // 1
-								zIndex: '1000', // 3
-								bottom: '16px'
-							}
-						}}
-					>
-						{images.map((img, i) => (
-							<img
-								width='100%'
-								src={img}
-								loading='lazy'
-								style={{
-									objectFit: 'cover',
-									aspectRatio: '1/1',
-									borderRadius: '8px'
-								}}
-								key={i}
-							/>
-						))}
-					</Carousel>
-				)}
-			</AccordionDetails>
-		</CustomAccordion>
-	);
-};
+import { Link, redirect } from 'react-router-dom';
+import { MenuItem } from '../components/MenuItem';
 
 export const Home = () => {
 	return (
@@ -123,9 +47,10 @@ export const Home = () => {
 				>
 					Menú
 				</Typography>
-				{menu.map(({ name, description, images, price }) => {
+				{menu.map(({ name, description, images, price }, k) => {
 					return (
 						<MenuItem
+							key={k}
 							title={name}
 							price={price}
 							description={description}
@@ -135,6 +60,12 @@ export const Home = () => {
 				})}
 			</Paper>
 			<Ingredientes />
+
+			<Link to={'order'}>
+				<Button fullWidth variant='outlined'>
+					Ordene aquí
+				</Button>
+			</Link>
 		</Container>
 	);
 };
@@ -158,8 +89,9 @@ export function Ingredientes() {
 					>
 						Jarabes
 					</Typography>
-					{ingredients.jarabes.map(ing => (
+					{ingredients.jarabes.map((ing, k) => (
 						<Typography
+							key={k}
 							sx={{ textAlign: 'center', fontWeight: 'bold', fontSize: 18 }}
 						>
 							{ing}
@@ -183,8 +115,9 @@ export function Ingredientes() {
 					>
 						Frutas
 					</Typography>
-					{ingredients.frutas.map(ing => (
+					{ingredients.frutas.map((ing, k) => (
 						<Typography
+							key={k}
 							sx={{ textAlign: 'center', fontWeight: 'bold', fontSize: 18 }}
 						>
 							{ing}
@@ -208,8 +141,9 @@ export function Ingredientes() {
 					>
 						Toppings
 					</Typography>
-					{ingredients.toppings.map(ing => (
+					{ingredients.toppings.map((ing, k) => (
 						<Typography
+							key={k}
 							sx={{ textAlign: 'center', fontWeight: 'bold', fontSize: 18 }}
 						>
 							{ing}
