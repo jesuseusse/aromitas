@@ -9,7 +9,6 @@ import {
 import { OrderItem } from '../components/OrderItem';
 import { useCartStore } from '../hooks/useCartStore';
 import { Product } from '../types/product';
-import React from 'react';
 
 export const Order = () => {
 	const { products } = useCartStore();
